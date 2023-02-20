@@ -1,17 +1,11 @@
 /// <reference types="cypress" />
-
-import {NotLoginPageUI} from "../PageUI/NotLoginPageUI"
-
+import { NotLoginPageUI } from "../PageUI/NotLoginPageUI";
 const notLoginPageUI = new NotLoginPageUI();
-
-export class NotLoginPagePO{
-    clickToRegisterLink()
-    {
+export class NotLoginPagePO {
+    clickToRegisterLink() {
         cy.xpath(notLoginPageUI.REGISTER_LINK).click();
     }
-    clickToLoginLink()
-    {
+    clickToLoginLink() {
         cy.xpath(notLoginPageUI.LOGIN_LINK).click();
     }
-
 }
