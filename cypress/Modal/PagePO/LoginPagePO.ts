@@ -16,7 +16,7 @@ export class LoginPagePO{
     }
     clickToLoginButton()
     {
-        cy.xpath(loginPageUI.LOGIN_BUTTON).click();
+        cy.xpath(loginPageUI.LOGIN_BUTTON).should('be.enabled').click();
     }
 
 }

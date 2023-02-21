@@ -6,7 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     projectId: "bee",
-    specPattern: "./cypress/Modal/TC/**.*",
-    baseUrl: "https://demo.nopcommerce.com/"
+    specPattern: "./cypress/Modal/TC/**.*"
+    //baseUrl: "https://demo.nopcommerce.com/"
   },
 });

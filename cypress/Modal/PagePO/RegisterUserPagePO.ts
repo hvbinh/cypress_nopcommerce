@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 import { RegisterPageUI } from "../PageUI/RegisterPageUI";
+
 const registerPageUI = new RegisterPageUI();
+
 export class RegisterUserPagePO {
     clickToMaleRadioButton() {
         cy.xpath(registerPageUI.MALE_RADIO_BUTTON).click();

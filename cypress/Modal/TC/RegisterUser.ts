@@ -4,14 +4,18 @@ import { NotLoginPageUI } from "../PageUI/NotLoginPageUI";
 import { NotLoginPagePO } from "../PagePO/NotLoginPagePO";
 import { sys } from "../../../node_modules/typescript/lib/typescript";
 import { RegisterUserPagePO } from "../PagePO/RegisterUserPagePO";
+import { GlobalConstant } from "../GlobalConstant";
+import { test } from "../test";
+
 
 const notLoginPagePO = new NotLoginPagePO();
 const registerPagePO = new RegisterUserPagePO();
 const email = "tony"+registerPagePO.randomNumber()+"@gmail.com";
+const url = new GlobalConstant();
 
 describe('Register a user', () => {
     it('Verify that register a user successfully', () => {
-        cy.visit("");
+        cy.visit(url.NOPCOMMERCE_USER_URL);
         notLoginPagePO.clickToRegisterLink();
         registerPagePO.clickToMaleRadioButton();
         registerPagePO.inputToFirstName("tony");
