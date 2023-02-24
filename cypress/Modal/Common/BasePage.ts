@@ -7,7 +7,7 @@ export class BasePage{
     }
     clickToElement(locator: string)
     {
-        cy.xpath(locator).should('be.enabled').click();
+        cy.xpath(locator).should('be.visible').click();
     }
     sendkeyToElement(locator: string, value: string)
     {
