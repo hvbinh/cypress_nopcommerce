@@ -11,6 +11,6 @@ export class BasePage{
     }
     sendkeyToElement(locator: string, value: string)
     {
-        cy.xpath(locator).should('be.visible').type(value);
+        cy.xpath(locator).clear().should('be.visible').type(value);
     }
 }

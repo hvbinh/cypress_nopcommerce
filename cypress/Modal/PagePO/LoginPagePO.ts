@@ -1,22 +1,24 @@
 /// <reference types="cypress" />
- import {LoginPageUI} from "../PageUI/LoginPageUI"
+ import { BasePage } from "../Common/BasePage";
+import {LoginPageUI} from "../PageUI/LoginPageUI"
  
 
  const loginPageUI = new LoginPageUI();
+ const basePage = new BasePage();
 
 
 export class LoginPagePO{
     inputToEmailTextbox(email: string)
     {
-        cy.xpath(loginPageUI.EMAIL_TEXTBOX).clear().type("admin@yourstore.com");
+        basePage.sendkeyToElement(loginPageUI.EMAIL_TEXTBOX,email);
     }
     inputToPasswordTextbox(password: string)
     {
-        cy.xpath(loginPageUI.PASSWORD_TEXTBOX).clear().type("admin");
+        basePage.sendkeyToElement(loginPageUI.PASSWORD_TEXTBOX,password);
     }
     clickToLoginButton()
     {
-        cy.xpath(loginPageUI.LOGIN_BUTTON).should('be.enabled').click();
+        basePage.clickToElement(loginPageUI.LOGIN_BUTTON);
     }
 
 }
