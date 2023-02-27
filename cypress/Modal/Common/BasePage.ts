@@ -13,4 +13,8 @@ export class BasePage{
     {
         cy.xpath(locator).clear().should('be.visible').type(value);
     }
+    verifyText(locator: string, expectedText: string)
+    {
+        cy.xpath(locator).should("contain",expectedText);
+    }
 }

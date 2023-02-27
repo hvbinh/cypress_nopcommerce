@@ -1,10 +1,12 @@
 /// <reference types="cypress" />
  import { BasePage } from "../Common/BasePage";
 import {LoginPageUI} from "../PageUI/LoginPageUI"
+import {DashboardPageUI} from "../PageUI/DashboardPageUI"
  
 
  const loginPageUI = new LoginPageUI();
  const basePage = new BasePage();
+ const dashboardPageUI = new DashboardPageUI();
 
 
 export class LoginPagePO{
@@ -19,6 +21,30 @@ export class LoginPagePO{
     clickToLoginButton()
     {
         basePage.clickToElement(loginPageUI.LOGIN_BUTTON);
+    }
+    verifyFullNameDisplayAfterLoginSuccessfully(fullName: string)
+    {
+        basePage.verifyText(dashboardPageUI.FULL_NAME,fullName);
+    }
+    clickToCatalogIcon()
+    {
+        basePage.clickToElement(dashboardPageUI.CATALOG_ICON);
+    }
+    clickToProduct()
+    {
+        basePage.clickToElement(dashboardPageUI.PRODUCT_OPTION);
+    }
+    inputToSearchProductTextbox(productName: string)
+    {
+        basePage.sendkeyToElement(dashboardPageUI.SEARCH_PRODUCT_TEXTBOX, productName);
+    }
+    clickToSearchProductButton()
+    {
+        basePage.clickToElement(dashboardPageUI.SEARCH_PRODUCT_BUTTON);
+    }
+    verifyProductResultContains(productResult: string)
+    {
+        basePage.verifyText(dashboardPageUI.PRODUCT_RESULT, productResult);
     }
 
 }

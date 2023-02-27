@@ -12,21 +12,16 @@ const adminUrl = new GlobalConstant();
 
 describe('Login function', () => {
     it('Verify that login to admin successfully', () => {
-        
         cy.visit(adminUrl.NOPCOMMERCE_ADMIN_URL);
         loginPagePO.inputToEmailTextbox("admin@yourstore.com");
         loginPagePO.inputToPasswordTextbox("admin");
         loginPagePO.clickToLoginButton();
-        cy.xpath("//a[@class='nav-link disabled']").should("have.text","John Smith");
-        cy.title().should("include", "Dashboard / nopCommerce administration");
-        cy.url("include","https://admin-demo.nopcommerce.com/admin/");
-        cy.xpath("//i[contains(@class,'fa-book')]").click();
-        cy.xpath("(//p[contains(text(),' Products')])[1]").click();
-        cy.xpath("//input[@id='SearchProductName']").clear().type("Explore the evergreen forest");
-        cy.xpath("//button[@id='search-products']").click();
-        cy.xpath("(//td)[3]").should("have.text","Explore the evergreen forest");
-        
-
+        loginPagePO.verifyFullNameDisplayAfterLoginSuccessfully("John Smith");
+        loginPagePO.clickToCatalogIcon();
+        loginPagePO.clickToProduct();
+        loginPagePO.inputToSearchProductTextbox("Lenovo IdeaCentre 600 All-in-One PC");
+        loginPagePO.clickToSearchProductButton();
+        loginPagePO.verifyProductResultContains("Lenovo IdeaCentre 600 All-in-One PC");
     });
     // it('Verify that search product with checked', () => {
         
