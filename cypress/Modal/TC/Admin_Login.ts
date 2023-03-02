@@ -29,7 +29,6 @@ describe('Login function', () => {
         loginPagePO.inputToEmailTextbox("admin@yourstore.com");
         loginPagePO.inputToPasswordTextbox("admin");
         loginPagePO.clickToLoginButton();
-
         loginPagePO.verifyFullNameDisplayAfterLoginSuccessfully("John Smith");
         loginPagePO.clickToCatalogIcon();
         loginPagePO.clickToProduct();
