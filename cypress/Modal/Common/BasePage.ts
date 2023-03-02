@@ -17,4 +17,8 @@ export class BasePage{
     {
         cy.xpath(locator).should("contain",expectedText);
     }
+    selectDropdown(locator: string, text: string)
+    {
+        cy.get(locator).select(text);
+    }
 }

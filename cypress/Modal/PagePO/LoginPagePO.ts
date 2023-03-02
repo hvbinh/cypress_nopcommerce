@@ -46,5 +46,13 @@ export class LoginPagePO{
     {
         basePage.verifyText(dashboardPageUI.PRODUCT_RESULT, productResult);
     }
+    selectToCategoryDropdown(dropdownOption: string)
+    {
+        basePage.selectDropdown(dashboardPageUI.CATEGORY_DROPDOWN,dropdownOption);
+    }
+    clickToSearchCategoryCheckbox()
+    {
+        basePage.clickToElement(dashboardPageUI.SEARCH_SUBCATEGORY_CHECKBOX);
+    }
 
 }

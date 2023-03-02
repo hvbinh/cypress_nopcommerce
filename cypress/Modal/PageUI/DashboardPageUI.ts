@@ -5,4 +5,6 @@ export class DashboardPageUI{
     SEARCH_PRODUCT_TEXTBOX = "//input[@id='SearchProductName']";
     SEARCH_PRODUCT_BUTTON = "//button[@id='search-products']";
     PRODUCT_RESULT = "(//td)[3]";
+    CATEGORY_DROPDOWN = "select[id='SearchCategoryId']";
+    SEARCH_SUBCATEGORY_CHECKBOX = "//input[@id='SearchIncludeSubCategories']";
 }
